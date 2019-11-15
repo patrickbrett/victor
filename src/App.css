@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,600&display=swap');
+
+* {
+    font-family: "Exo", sans-serif;
+}
+
+.data-label, .data-field {
+    display: inline-block;
+    width: 100px;
+}
+
+.classification-inner {
+    margin: 5px auto;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.container {
+    display: inline-block;
+    margin: 0 50px;
+    padding: 0 20px;
+    border: 1px solid #aaa;
+    float: left;
+}
+
+.not-in-use {
+    color: grey;
+}

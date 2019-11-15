@@ -1,0 +1,42 @@
+service: victor
+
+#plugins:
+#  - serverless-python-requirements
+
+frameworkVersion: ">=1.47.0 <2.0.0"
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+#  pythonRequirements:
+#    dockerizePip: non-linux
+provider:
+  name: aws
+  runtime: python3.7
+  environment:
+    SLS_STAGE: ${self:custom.stage}
+
+functions:
+#  fit-model:
+#    handler: functions/fit-model.handler
+#    events:
+#      - http:
+#          path: /fit-model
+#          method: post
+#          cors: true
+#    timeout: 15
+#  predict:
+#    handler: functions/predict.handler
+#    events:
+#      - http:
+#          path: /predict
+#          method: post
+#          cors: true
+#    timeout: 15
+  fit-and-predict:
+    handler: functions/fit-and-predict.handler
+    events:
+      - http:
+          path: /fit-and-predict
+          method: post
+          cors: true
+    timeout: 15
